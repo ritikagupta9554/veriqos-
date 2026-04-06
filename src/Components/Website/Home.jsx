@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import cta from "../image/cta.png";
 import ServicesCard from "./ServicesCard";
 import CardServices from "./CardServices";
 import PlatformCard from "./PlatformCard";
 import MultiplePlatfom from "./MultiplePlatfom";
+import AddPlatfrom from "./AddPlatfrom";
+import EFinInnovation from "./EFinInnovation";
 
 const Home = () => {
+  const [active, setActive] = useState("user");
 
- const handleClick =() => {
-  return ( 
-  <MultiplePlatfom/>)
- }
+  const handleClick = (props) => {
+    setActive(props);
+  };
 
   return (
     <>
@@ -107,25 +109,86 @@ const Home = () => {
             financial ecosystem{" "}
           </p>
         </div>
+
         <div className="h-[79vh] w-screen ">
           <div className="h-[15vh] w-screen flex gap-2 justify-center ">
             <div className="h-[10vh] bg-teal-400 rounded-s-2xl w-[30vw] mt-3  justify-center flex items-center ">
-              <button onClick={() => handleClick("user")} className="text-xl font-medium text-white">User App</button>
+              <button
+                onClick={() => handleClick("user")}
+                className="text-xl font-medium text-white"
+              >
+                User App
+              </button>
             </div>
             <div className="h-[10vh] border border-teal-400  w-[30vw] mt-3 justify-center flex items-center">
-              <button onClick={() => handleClick("agent")} className="text-xl font-medium ">Agent App</button>
+              <button
+                onClick={() => handleClick("agent")}
+                className="text-xl font-medium "
+              >
+                Agent App
+              </button>
             </div>
             <div className="h-[10vh] border border-teal-400 rounded-e-2xl w-[30vw] mt-3 justify-center items-center flex">
-              <button onClick={() => handleClick("admin")} className="text-xl font-medium">Admin Dashboard</button>
+              <button
+                onClick={() => handleClick("admin")}
+                className="text-xl font-medium"
+              >
+                Admin Dashboard
+              </button>
             </div>
           </div>
           {/* User App */}
-         {/* <MultiplePlatfom/> */}
-          
+          {/* <MultiplePlatfom/> */}
+          {active === "user" && <MultiplePlatfom />}
         </div>
-
       </div>
 
+      {/* Additional Platform Capabilities */}
+
+      <div className="h-[60vh] w-screen justify-center ">
+        <div className="justify-center text-center">
+          <h1 className="font-bold text-2xl">
+            Additional Platform Capabilities
+          </h1>
+          <p className=" text-center">
+            Comprehensive tools and integrations to power your financial
+            operations
+          </p>
+        </div>
+
+        <div className="h-[30vh] w-screen  flex justify-center mt-5">
+          <div className="grid grid-cols-2 gap-6">
+            <AddPlatfrom />
+          </div>
+        </div>
+      </div>
+
+      {/* Empowering Financial Innovation Across Industries */}
+
+      <div className=" w-screen  justify-center items-center">
+        <div className="">
+          <h1 className="font-bold text-2xl text-center">
+            Empowering Financial Innovation Across Industries
+          </h1>
+          <p className="text-center mt-2 ">
+            Our fintech platform is built to serve a wide range of industries
+            where speed,
+            <br /> compliance, and secure financial infrastructure are
+            mission-critical.
+          </p>
+        </div>
+        <div className=" mt-5.5   flex justify-center items-center  ">
+          <div className="grid grid-cols-3  gap-5">
+            <EFinInnovation />
+          </div>
+        </div>
+      </div>
+
+      {/* Get to Know Our Clients */}
+      
+
+     
+      
     </>
   );
 };
