@@ -1,28 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import cta from "../image/cta.png";
+import ServicesCard from "./ServicesCard";
+import CardServices from "./CardServices";
+import PlatformCard from "./PlatformCard";
+import MultiplePlatfom from "./MultiplePlatfom";
+import AddPlatfrom from "./AddPlatfrom";
+import EFinInnovation from "./EFinInnovation";
+
 const Home = () => {
-  const services = [
-    {
-      img: "",
-      title: "Digital KYC Automation",
-      des: "Streamline customer verification with AI-powered document processing and biometric authentication.",
-    },
-    {
-      img: "",
-      title: "Smart Document Verification",
-      des: "Intelligent document analysis with real-time fraud detection and automated data extraction.",
-    },
-    {
-      img: "",
-      title: "AI-Powered Risk Assessment",
-      des: "Advanced machine learning algorithms for comprehensive risk evaluation and scoring.",
-    },
-    {
-      img: "",
-      title: "Secure Onboarding APIs",
-      des: "Enterprise-grade APIs with robust security protocols and seamless integration capabilities.",
-    },
-  ];
+  const [active, setActive] = useState("user");
+
+  const handleClick = (props) => {
+    setActive(props);
+  };
 
   return (
     <>
@@ -64,21 +54,141 @@ const Home = () => {
       </div>
 
       {/* card */}
-      <div className="mt-5 w-screen  justify-center gap-10 items-center flex">
-        {services.map((index , item) => (
-          <div key={index} className="h-50 w-100 rounded-2xl p-3  border shadow-2xl ">
-            <div className="h-15 w-15 bg-black rounded-4xl mt-1">
-              <img src="" alt="" />
-            </div>
-            <div className="">
-              <h1 className="font-bold mt-1">{item.title}</h1>
-              <p className="mt-1">{item.des}</p>
-            </div>
-          </div>
-        ))}
+      <div className="mt-5 w-full flex justify-center">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10">
+          <ServicesCard />
+        </div>
       </div>
 
-      <div className="mt-10"></div>
+      <div className="mt-10  w-screen flex justify-center items-center text-center flex-col">
+        <h1 className="font-bold text-2xl ">Our Services</h1>
+        <p className="">
+          Comprehensive financial technology solutions tailored to <br /> your
+          business needs
+        </p>
+        <div className=" w-screen  flex  justify-center  ">
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
+            <CardServices />
+          </div>
+        </div>
+      </div>
+
+      {/* Why Choose Our Platform? */}
+
+      <div className="h-[90vh]   flex items-center justify-center ">
+        <div className="flex-wrap  justify-center items-center  ">
+          <h1 className=" font-bold text-2xl text-center">
+            Why Choose Our Platform?
+          </h1>
+          <p className="text-sm text-center">
+            Trusted by leading financial institutions worldwide for our proven
+            track record <br /> and innovative solutions
+          </p>
+          <div className="h-[70vh] w-screen flex  items-center justify-center gap-5 mt-4">
+            <PlatformCard />
+          </div>
+        </div>
+      </div>
+      <div className="items-center justify-center flex mt-5">
+        <button className="border-teal-500 border rounded-4xl py-2.5 px-3.5 text-sm">
+          Get Started Today
+        </button>
+        <button className="bg-teal-500 border-teal-500 border rounded-full h-12 w-12 me-0.5 ">
+          /
+        </button>
+      </div>
+
+      {/* Multi-Platform Solution */}
+      <div className="h-[90vh] w-screen ">
+        <div>
+          <h1 className="font-bold text-2xl justify-center text-center mt-2.5">
+            Multi-Platform Solution
+          </h1>
+          <p className="text-sm text-center mt-1">
+            Comprehensive applications designed for every stakeholder in your
+            financial ecosystem{" "}
+          </p>
+        </div>
+
+        <div className="h-[79vh] w-screen ">
+          <div className="h-[15vh] w-screen flex gap-2 justify-center ">
+            <div className="h-[10vh] bg-teal-400 rounded-s-2xl w-[30vw] mt-3  justify-center flex items-center ">
+              <button
+                onClick={() => handleClick("user")}
+                className="text-xl font-medium text-white"
+              >
+                User App
+              </button>
+            </div>
+            <div className="h-[10vh] border border-teal-400  w-[30vw] mt-3 justify-center flex items-center">
+              <button
+                onClick={() => handleClick("agent")}
+                className="text-xl font-medium "
+              >
+                Agent App
+              </button>
+            </div>
+            <div className="h-[10vh] border border-teal-400 rounded-e-2xl w-[30vw] mt-3 justify-center items-center flex">
+              <button
+                onClick={() => handleClick("admin")}
+                className="text-xl font-medium"
+              >
+                Admin Dashboard
+              </button>
+            </div>
+          </div>
+          {/* User App */}
+          {/* <MultiplePlatfom/> */}
+          {active === "user" && <MultiplePlatfom />}
+        </div>
+      </div>
+
+      {/* Additional Platform Capabilities */}
+
+      <div className="h-[60vh] w-screen justify-center ">
+        <div className="justify-center text-center">
+          <h1 className="font-bold text-2xl">
+            Additional Platform Capabilities
+          </h1>
+          <p className=" text-center">
+            Comprehensive tools and integrations to power your financial
+            operations
+          </p>
+        </div>
+
+        <div className="h-[30vh] w-screen  flex justify-center mt-5">
+          <div className="grid grid-cols-2 gap-6">
+            <AddPlatfrom />
+          </div>
+        </div>
+      </div>
+
+      {/* Empowering Financial Innovation Across Industries */}
+
+      <div className=" w-screen  justify-center items-center">
+        <div className="">
+          <h1 className="font-bold text-2xl text-center">
+            Empowering Financial Innovation Across Industries
+          </h1>
+          <p className="text-center mt-2 ">
+            Our fintech platform is built to serve a wide range of industries
+            where speed,
+            <br /> compliance, and secure financial infrastructure are
+            mission-critical.
+          </p>
+        </div>
+        <div className=" mt-5.5   flex justify-center items-center  ">
+          <div className="grid grid-cols-3  gap-5">
+            <EFinInnovation />
+          </div>
+        </div>
+      </div>
+
+      {/* Get to Know Our Clients */}
+      
+
+     
+      
     </>
   );
 };
