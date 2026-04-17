@@ -30,8 +30,8 @@ const PlatformCard = () => {
       Platform.map((value,index) => {
         return(
           <>
-          <div className="h-[65vh] w-60 border-2 border-amber-400 rounded-2xl p-3 ms-5 ">
-              <div className="h-[30vh] w-53 bg-white rounded-2xl ">
+          <div className="h-[65vh] w-[27vw] border-2 border-amber-400 rounded-2xl p-3  ">
+              <div className="h-[30vh]  bg-white rounded-2xl ">
                 <img src={value.img} alt="" />
               </div>
               <div className=""><h1 className="font-black text-2xl text-center mt-3 ">{value.h1}</h1>

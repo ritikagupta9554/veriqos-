@@ -6,6 +6,15 @@ import PlatformCard from "./PlatformCard";
 import MultiplePlatfom from "./MultiplePlatfom";
 import AddPlatfrom from "./AddPlatfrom";
 import EFinInnovation from "./EFinInnovation";
+import TestCard from "./home/TestCard";
+import logo from "../image/Footer/logo (2).png"
+import app from "../image/Footer/div1.png"
+import play from "../image/Footer/div2.png"
+import f from "../image/Footer/face.png"
+import i from "../image/Footer/insta.png"
+import t from "../image/Footer/twi.png"
+import l from "../image/Footer/link.png"
+
 
 const Home = () => {
   const [active, setActive] = useState("user");
@@ -75,7 +84,7 @@ const Home = () => {
 
       {/* Why Choose Our Platform? */}
 
-      <div className="h-[90vh]   flex items-center justify-center ">
+      <div className="h-[90vh]  flex items-center justify-center ">
         <div className="flex-wrap  justify-center items-center  ">
           <h1 className=" font-bold text-2xl text-center">
             Why Choose Our Platform?
@@ -84,7 +93,7 @@ const Home = () => {
             Trusted by leading financial institutions worldwide for our proven
             track record <br /> and innovative solutions
           </p>
-          <div className="h-[70vh] w-screen flex  items-center justify-center gap-5 mt-4">
+          <div className="h-[70vh] flex  items-center justify-center gap-5 mt-4">
             <PlatformCard />
           </div>
         </div>
@@ -185,10 +194,115 @@ const Home = () => {
       </div>
 
       {/* Get to Know Our Clients */}
-      
+      <div className="mt-20">
+        <h1 className="font-bold text-2xl justify-center text-center ">
+          Get to Know Our Clients
+        </h1>
+        <div className=" flex justify-center w-screen gap-5 ">
+          <TestCard />
+        </div>
+        <div className="justify-center items-center flex mt-2">
+          <button className="border-teal-500 border rounded-4xl py-2.5 px-3.5 text-sm j ">
+            Get Started Today
+          </button>
+          <button className="bg-teal-500 border-teal-500 border rounded-full h-12 w-12 me-0.5 ">
+            /
+          </button>
+        </div>
+      </div>
 
-     
-      
+      {/* Got questions? We got answers! */}
+      <div className=" w-screen justify-around flex mt-20  ">
+        <div className="   ">
+          <h1 className="font-bold text-4xl mt-5">
+            Got questions? We got <br /> answers!
+          </h1>
+          <p className="mt-3">
+            Feel free to reach out to us if you have <br /> more questions for
+            us.
+          </p>
+          <button className="border-teal-500 border rounded-4xl py-2.5 px-3.5 text-sm mt-5 ">
+            Contact US
+          </button>
+          <button className="bg-teal-500 border-teal-500 border rounded-full h-12 w-12 me-0.5 ">
+            /
+          </button>
+        </div>
+        <div className="  ">
+          <div className="bg-white border-teal-500  border rounded-xl h-25 p-3 ">
+            <h3 className="font-bold text-xl">What is borderless</h3>
+            <p>Join paywall pup and integrate seamlessly into your website.</p>
+          </div>
+          <div className="bg-white border-teal-500 border rounded-xl h-15 mt-2 p-3">
+            <h3 className="font-bold text-xl">What do I need to sign up?</h3>
+          </div>
+          <div className="bg-white border-teal-500 border rounded-xl h-15 mt-2 p-3">
+            <h3 className="font-bold text-xl">How fast is onboarding?</h3>
+          </div>
+          <div className="bg-white border-teal-500 border rounded-xl h-15 mt-2 p-3">
+            <h3 className="font-bold text-xl">
+              How many accounts can i create?
+            </h3>
+          </div>
+          <div className="bg-white border-teal-500 border rounded-xl h-15 mt-2 p-3">
+            <h3 className="font-bold text-xl">
+              How many stack do you support?
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Section */}
+      <div className=" w-screen bg-teal-500 mt-20 ">
+        <div className=" pt-10 flex flex-col justify-center items-center">
+        <div className=" justify-center"><img src={logo} alt="" /></div>
+        <div className="h-15 w-60  flex justify-center items-center gap-5 mt-3">
+          <div className=" ">
+          <img src={app} alt="" /></div>
+          <div className="">
+          <img src={play} alt="" /></div>
+        </div>
+       </div>
+        <div className="">
+          <ul className="flex gap-4 justify-center text-xl ">
+            <li>Industries</li>
+            <li>About Us</li>
+            <li>Services</li>
+            <li>Platform</li>
+            <li>Contact</li>
+            <li>Help</li>
+            <li>Support</li>
+          </ul>
+        </div>
+        <div className="flex gap-4 justify-center mt-5">
+          <div className=""><img src={t} alt="" /></div>
+          <div className=""><img src={f} alt="" /></div>
+          <div className=""><img src={i} alt="" /></div>
+          <div className=""><img src={l} alt="" /></div>
+        </div>
+        <p className="text-xl justify-center text-center mt-3">
+          <b>Send Your Feedback:</b> moc.edargpu@tcatnoc
+        </p>
+        <div className=" ">
+          <ul className="flex gap-2 justify-center mt-4  text-xl">
+            <li>Privacy Policy</li>
+            <li>|</li>
+            <li>Terms & Condition</li>
+            <li>|</li>
+            <li>Cookie Notice</li>
+            <li>|</li>
+            <li>Copyright Policy</li>
+            <li>|</li>
+            <li>Data Policy</li>
+            <li>|</li>
+          </ul>
+        </div>
+       <div className="pb-10">
+         <p className="text-xl justify-center text-center mt-2.5 me-5 ">
+          © 2025 Design by veriqos Technologies. All rights reserved.
+        </p>
+       </div>
+      </div>
     </>
   );
 };
